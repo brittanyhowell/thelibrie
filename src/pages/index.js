@@ -17,7 +17,7 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+
         <CardGrid>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -43,11 +43,13 @@ class BlogIndex extends React.Component {
 
 const CardGrid = styled.div`
   display: grid;
+  max-width: 1440px;
+  margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* border: 1px solid red; */
   column-gap: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 `
 
 const Card = styled.div`
@@ -56,6 +58,7 @@ const Card = styled.div`
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: white;
 `
 
 const CardContent = styled.div`
