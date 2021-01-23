@@ -8,6 +8,7 @@ import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
+  //hello
   render() {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -17,7 +18,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
-        <h1 style={{color:'red'}}>{post.frontmatter.title}</h1>
+        <h1 style={{ color: 'red' }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
