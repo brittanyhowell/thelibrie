@@ -28,8 +28,8 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in
-              the oven.
+              Written by <strong>{author}</strong> who lives and works in the
+              oven.
             </p>
           </div>
         )
@@ -51,7 +51,7 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
-          twitter
+          instagram
         }
       }
     }
