@@ -53,6 +53,10 @@ const headerQuery = graphql`
 `
 
 const HeaderContainer = styled.div`
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
   display: grid;
   background-color: white;

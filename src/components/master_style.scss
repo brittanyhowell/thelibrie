@@ -1,11 +1,19 @@
+$color-font-dark: #434345;
+
 html body {
   font-family: 'Patrick Hand';
   background-color: #ededed;
   margin: 0px;
   padding: 0px;
+  color: $color-font-dark;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: $color-font-dark;
+}
+
+h1 {
+  font-family: 'Roboto';
+  font-weight: 600;
 }

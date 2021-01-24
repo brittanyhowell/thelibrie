@@ -11,7 +11,7 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
-        {children}
+        <Body>{children}</Body>
         <Footer>
           © {new Date().getFullYear()}, Built with
           {` `}
@@ -28,4 +28,8 @@ const Footer = styled.div`
   max-width: 1140px;
   margin: auto;
   height: 640px;
+`
+const Body = styled.div`
+  padding-top: 64px;
+  /* border: 1px solid red; */
 `

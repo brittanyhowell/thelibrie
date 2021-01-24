@@ -24,24 +24,17 @@ class BlogIndex extends React.Component {
           {/* <Card> */}
           <ImageBox src={`brie.PNG`} />
           {/* </Card> */}
-          <Card>
-            <CardContent>
-              <h1>Good day m8</h1>
-              <p>
-                Welcome to me site. I've got loads of proper good recipes for
-                ya.
-              </p>
-            </CardContent>
-          </Card>
+          <div>
+            <h1>Good day m8</h1>
+            <p>
+              Welcome to me site. I've got loads of proper good recipes for ya.
+            </p>
+          </div>
         </BioContainer>
 
         <HeadingContainer>
-          <Card>
-            <CardContent>
-              <h1>Latest Recipes:</h1>
-              <p>Hottest meals from da kitchen</p>
-            </CardContent>
-          </Card>
+          <h1>Latest Recipes:</h1>
+          <p>Hottest meals from da kitchen</p>
         </HeadingContainer>
         <CardGrid>
           {recipes.map(({ node }) => {
@@ -69,12 +62,8 @@ class BlogIndex extends React.Component {
         </CardGrid>
 
         <HeadingContainer>
-          <Card>
-            <CardContent>
-              <h1>Latest Blogs:</h1>
-              <p>Hottest takes from da mind.</p>
-            </CardContent>
-          </Card>
+          <h1>Latest Blogs:</h1>
+          <p>Hottest takes from da mind.</p>
         </HeadingContainer>
         <CardGrid>
           {blogs.map(({ node }) => {
@@ -107,6 +96,8 @@ const BioContainer = styled.div`
   padding-bottom: 64px;
   grid-template-columns: 1fr 3fr;
   column-gap: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
 `
 
 const ThunbnailContainer = styled.div`
@@ -129,6 +120,8 @@ const ImageBox = styled.img`
 const HeadingContainer = styled.div`
   max-width: 1440px;
   margin: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 `
 
 const CardGrid = styled.div`
@@ -138,8 +131,11 @@ const CardGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   /* border: 1px solid red; */
   column-gap: 64px;
+  row-gap: 64px;
   padding-top: 64px;
   padding-bottom: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
 `
 
 const Card = styled.div`
