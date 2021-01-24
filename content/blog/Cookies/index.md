@@ -1,6 +1,8 @@
 ---
 title: Sprinkle cookies
-date: '2015-05-01T22:12:03.284Z'
+date: '2020-01-24T22:12:03.284Z'
+post-type: 'recipe'
+thumb-nail: 'thumbnails/drop-sugar-cookies.jpg'
 ---
 
 As we all know sprinkles are the best possible food source and if we could subsist on a diet of sprinkles alone that would be ideal.

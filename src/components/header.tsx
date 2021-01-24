@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
 import { brandColors } from '../colors'
@@ -11,14 +11,16 @@ export function Header() {
         const { author, social } = data.site.siteMetadata
         return (
           <HeaderContainer>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginLeft: 16,
-                minWidth: 50,
-              }}
-            />
+            <Link to={'/'}>
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                style={{
+                  marginLeft: 16,
+                  minWidth: 50,
+                }}
+              />
+            </Link>
             <p>
               Written by <strong>{author}</strong> who lives and works in the
               oven.

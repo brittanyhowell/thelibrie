@@ -5,10 +5,30 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const recipePost = path.resolve(`./src/templates/recipe-post.tsx`)
   return graphql(
     `
       {
-        allMdx(
+        recipes: allMdx(
+          filter: { frontmatter: { post_type: { eq: "recipe" } } }
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+              body
+            }
+          }
+        }
+        blogs: allMdx(
+          filter: { frontmatter: { post_type: { eq: "blog" } } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -33,17 +53,36 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMdx.edges
+    const recipes = result.data.recipes.edges
+    const blogs = result.data.blogs.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    console.log(recipes)
+
+    recipes.forEach((recipe, index) => {
+      const previous =
+        index === recipes.length - 1 ? null : recipes[index + 1].node
+      const next = index === 0 ? null : recipes[index - 1].node
 
       createPage({
-        path: post.node.fields.slug,
+        path: recipe.node.fields.slug,
+        component: recipePost,
+        context: {
+          slug: recipe.node.fields.slug,
+          previous,
+          next,
+        },
+      })
+    })
+
+    blogs.forEach((blog, index) => {
+      const previous = index === blogs.length - 1 ? null : blogs[index + 1].node
+      const next = index === 0 ? null : blogs[index - 1].node
+
+      createPage({
+        path: blog.node.fields.slug,
         component: blogPost,
         context: {
-          slug: post.node.fields.slug,
+          slug: blog.node.fields.slug,
           previous,
           next,
         },
