@@ -27,14 +27,14 @@ class BlogIndex extends React.Component {
           <div>
             <h1>Good day m8</h1>
             <p>
-              Welcome to me site. I've got loads of proper good recipes for ya.
+              Hello this is the librie. Welcome.
             </p>
           </div>
         </BioContainer>
 
         <HeadingContainer>
           <h1>Latest Recipes:</h1>
-          <p>Hottest meals from da kitchen</p>
+          <p>Iterations of sprinkles</p>
         </HeadingContainer>
         <CardGrid>
           {recipes.map(({ node }) => {
@@ -63,7 +63,7 @@ class BlogIndex extends React.Component {
 
         <HeadingContainer>
           <h1>Latest Blogs:</h1>
-          <p>Hottest takes from da mind.</p>
+          <p>Mainly music reviews but I guess other thoughts eventually.</p>
         </HeadingContainer>
         <CardGrid>
           {blogs.map(({ node }) => {
