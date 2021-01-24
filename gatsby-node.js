@@ -56,8 +56,6 @@ exports.createPages = ({ graphql, actions }) => {
     const recipes = result.data.recipes.edges
     const blogs = result.data.blogs.edges
 
-    console.log(recipes)
-
     recipes.forEach((recipe, index) => {
       const previous =
         index === recipes.length - 1 ? null : recipes[index + 1].node
