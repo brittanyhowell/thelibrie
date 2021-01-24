@@ -15,7 +15,7 @@ class Layout extends React.Component {
         <Footer>
           © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.christopherdonaldson.co.uk">Love</a>
         </Footer>
       </div>
     )
@@ -27,4 +27,5 @@ export default Layout
 const Footer = styled.div`
   max-width: 1140px;
   margin: auto;
+  height: 640px;
 `
