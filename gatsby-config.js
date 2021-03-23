@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    title: `CodeBrie`,
+    author: `Brie Howell`,
+    description: `Brie Howells personal/ professional blog.`,
+    siteUrl: `https://codebrie.com/`,
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `chrisddonaldson`,
     },
   },
   plugins: [
@@ -125,8 +125,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Code Brie`,
+        short_name: `CodeBrie`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
