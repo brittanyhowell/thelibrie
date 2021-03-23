@@ -8,20 +8,12 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allWpPost {
           edges {
             node {
               id
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-              body
+              slug
+              title
             }
           }
         }
@@ -33,19 +25,17 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allMdx.edges
+    const posts = result.data.allWpPost.edges
 
     posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+ 
 
       createPage({
-        path: post.node.fields.slug,
+        path: post.node.slug,
         component: blogPost,
         context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
+          id: post.node.id,
+   
         },
       })
     })

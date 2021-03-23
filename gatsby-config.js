@@ -58,9 +58,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-source-wordpress`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        url: `https://cms.codebrie.com/graphql`,
       },
     },
     {
