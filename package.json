@@ -63,8 +63,9 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "develop": "gatsby develop",
+    "serve": "gatsby serve",
     "start": "npm run develop",
-    "build": "gatsby build  --log-pages",
+    "build": "gatsby build  --log-pages --verbose",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
