@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,16 +17,12 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
+        {/* <Bio /> */}
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
             <div key={node.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3>
                 <Link style={{ boxShadow: `none` }} to={node.slug}>
                   {title}
                 </Link>

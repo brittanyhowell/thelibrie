@@ -5,7 +5,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   //hello
@@ -14,32 +13,14 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
-
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.title} description={"description"} />
-        <h1 style={{ color: 'red' }}>{post.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {/* {post.date} */}
-        </p>
-    <div>
-      {post.content}
-    </div>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-
-
+        <SEO title={post.title} description={'description'} />
+        <h1>{post.title}</h1>
+        <p>{/* {post.date} */}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.content }}>{}</div>
+        <hr />
+        {/* <Bio /> */}
       </Layout>
     )
   }
@@ -55,11 +36,11 @@ export const pageQuery = graphql`
         author
       }
     }
-    wpPost(id: { eq: $id } ) {
+    wpPost(id: { eq: $id }) {
       id
-    title
-    slug
-    content
+      title
+      slug
+      content
     }
   }
 `

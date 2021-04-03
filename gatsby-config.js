@@ -29,9 +29,7 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         // a workaround to solve mdx-remark plugin compat issue
         // https://github.com/gatsbyjs/gatsby/issues/15486
-        plugins: [
-          `gatsby-remark-images`,
-        ],
+        plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -53,6 +51,26 @@ module.exports = {
             resolve: `gatsby-remark-smartypants`,
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-custom-api',
+      options: {
+        url: 'http://localhost:8080/api/food-graphql',
+        rootKey: 'foods',
+        imageKeys: ['images'],
+        schemas: {
+          foods: `
+           _id: String
+            name: String
+            carbs: String
+            sugars: String
+            protein: String
+            fats: String
+            fiber: String
+            totalCals: String
+              `,
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -80,7 +98,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   data: edge.node.frontmatter.date,
@@ -136,11 +154,5 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
   ],
 }
