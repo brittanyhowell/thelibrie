@@ -19,7 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors
     }
@@ -28,14 +28,11 @@ exports.createPages = ({ graphql, actions }) => {
     const posts = result.data.allWpPost.edges
 
     posts.forEach((post, index) => {
- 
-
       createPage({
         path: post.node.slug,
         component: blogPost,
         context: {
           id: post.node.id,
-   
         },
       })
     })

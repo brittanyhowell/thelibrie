@@ -16,10 +16,18 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.title} description={'description'} />
-        <h1>{post.title}</h1>
-        <p>{/* {post.date} */}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.content }}>{}</div>
-        <hr />
+        <div className={'container mx-auto '}>
+          <h1
+            className={
+              'font-bold text-5xl text-blue-900 text-opacity-75 pt-20 pb-10'
+            }
+          >
+            {post.title}
+          </h1>
+          <p>{/* {post.date} */}</p>
+          <div dangerouslySetInnerHTML={{ __html: post.content }}>{}</div>
+          <hr />
+        </div>
         {/* <Bio /> */}
       </Layout>
     )

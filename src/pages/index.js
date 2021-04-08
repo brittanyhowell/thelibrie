@@ -18,20 +18,25 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         {/* <Bio /> */}
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <div key={node.slug}>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.slug}>
-                  {title}
-                </Link>
-              </h3>
-              {/* <small>{node.date}</small> */}
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <div className="container mx-auto py-10 ">
+          {posts.map(({ node }) => {
+            const title = node.title || node.slug
+            return (
+              <div
+                key={node.slug}
+                className={'shadow-md p-4 mb-4 rounded-md bg-white'}
+              >
+                <h3>
+                  <Link style={{ boxShadow: `none` }} to={node.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                {/* <small>{node.date}</small> */}
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            )
+          })}
+        </div>
       </Layout>
     )
   }
