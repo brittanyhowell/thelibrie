@@ -6,7 +6,7 @@ class Layout extends React.Component {
     const { location, title, children } = this.props
 
     return (
-      <div >
+      <div className={"font-crimsonpro"}>
         <Navigation location={location} title={title} />
         {children}
         {/* <footer className={"fixed bottom-0 bg-yellow-200 min-w-full px-10"}>

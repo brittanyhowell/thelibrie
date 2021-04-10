@@ -13,10 +13,10 @@ export const Ingredients: React.FC<IngredientsInterface> = ({data}) => {
     const json = JSON.parse(decode)
     return(
     <div>
-        <h2 className={""}>Ingredients</h2>
+        <h2 className={"text-4xl italic text-gray-600 mb-10 "}>Ingredients</h2>
         <ul>
         {json.map(v=> 
-            <li>
+            <li className={"text-gray-500 mb-2"}>
                   <span>
                       {v.name}
                   </span>

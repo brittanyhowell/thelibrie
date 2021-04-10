@@ -12,6 +12,7 @@ export const RecipeMethod: React.FC<RecipeMethodInterface> = ({data}) => {
     console.log(json)
     return(
     <div>
+          <h2 className={"text-4xl italic text-gray-600 mb-10 "}>Method</h2>
         <ul>
         {json.map((v,i)=> 
             <li className={"mb-10 relative"}>
