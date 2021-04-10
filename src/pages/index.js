@@ -9,7 +9,7 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allWpPost.edges
+    const posts = data.allWpRecipe.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allWpPost {
+    allWpRecipe {
       edges {
         node {
           slug

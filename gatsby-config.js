@@ -53,26 +53,26 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-source-custom-api',
-      options: {
-        url: 'http://localhost:8080/api/food-graphql',
-        rootKey: 'foods',
-        imageKeys: ['images'],
-        schemas: {
-          foods: `
-           _id: String
-            name: String
-            carbs: String
-            sugars: String
-            protein: String
-            fats: String
-            fiber: String
-            totalCals: String
-              `,
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-custom-api',
+    //   options: {
+    //     url: 'http://localhost:8080/api/food-graphql',
+    //     rootKey: 'foods',
+    //     imageKeys: ['images'],
+    //     schemas: {
+    //       foods: `
+    //        _id: String
+    //         name: String
+    //         carbs: String
+    //         sugars: String
+    //         protein: String
+    //         fats: String
+    //         fiber: String
+    //         totalCals: String
+    //           `,
+    //     },
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -154,29 +154,5 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-prettier-eslint',
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            '**/*.{css,scss,less}',
-            '**/*.{json,json5}',
-            '**/*.{graphql}',
-            '**/*.{md,mdx}',
-            '**/*.{html}',
-            '**/*.{yaml,yml}',
-            // '**/*.{js,jsx,ts,tsx}',
-          ],
-        },
-        eslint: {
-          patterns: '**/*.{js,jsx,ts,tsx}',
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
   ],
 }

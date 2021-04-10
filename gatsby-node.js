@@ -8,7 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allWpPost {
+        allWpRecipe {
           edges {
             node {
               id
@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create blog posts pages.
-    const posts = result.data.allWpPost.edges
+    const posts = result.data.allWpRecipe.edges
 
     posts.forEach((post, index) => {
       createPage({

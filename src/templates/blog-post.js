@@ -9,10 +9,10 @@ import SEO from '../components/seo'
 class BlogPostTemplate extends React.Component {
   //hello
   render() {
-    const post = this.props.data.wpPost
+    const post = this.props.data.wpRecipe
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
+    console.log(post.lazy_data)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title={post.title} description={'description'} />
@@ -25,7 +25,7 @@ class BlogPostTemplate extends React.Component {
             {post.title}
           </h1>
           <p>{/* {post.date} */}</p>
-          <div dangerouslySetInnerHTML={{ __html: post.content }}>{}</div>
+          <div dangerouslySetInnerHTML={{ __html: post.lazy_data }}>{}</div>
           <hr />
         </div>
         {/* <Bio /> */}
@@ -44,11 +44,11 @@ export const pageQuery = graphql`
         author
       }
     }
-    wpPost(id: { eq: $id }) {
+    wpRecipe(id: { eq: $id }) {
       id
       title
       slug
-      content
+      lazy_data
     }
   }
 `
