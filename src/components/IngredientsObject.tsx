@@ -9,12 +9,11 @@ interface IngredientsInterface {
 }
 
 export const Ingredients: React.FC<IngredientsInterface> = ({data}) => {
-    console.log(data)
     const decode = decodeURI(data.attrs.ingredients)
     const json = JSON.parse(decode)
-    console.log(json)
     return(
     <div>
+        <h2 className={""}>Ingredients</h2>
         <ul>
         {json.map(v=> 
             <li>

@@ -18,7 +18,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <div className={'bg-yellow-100'}>
-      <div className={'mx-auto container'}>
+      <div className={'mx-auto max-w-screen-xl px-10'}>
         <div className={'flex flex-row py-2'}>
           {links.map((v, i) => {
             return (

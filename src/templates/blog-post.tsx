@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { parse } from '@wordpress/block-serialization-default-parser';
 import { LazyBlock } from '../components/LazyBlocks'
-const BlogPostTemplate = ({data, pageContext, })=> {
+const BlogPostTemplate = ({data, pageContext,location })=> {
     const post = data.wpRecipe
     const siteTitle = data.site.siteMetadata.title
     const { previous, next } = pageContext
@@ -28,24 +28,45 @@ const BlogPostTemplate = ({data, pageContext, })=> {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title={post.title} description={'description'} />
-        <div className={'container mx-auto '}>
-          <h1
-            className={
-              'font-bold text-5xl text-blue-900 text-opacity-75 pt-20 pb-10'
-            }
-          >
-            {post.title}
-          </h1>
-        <div className={"grid grid-cols-3 gap-4"}>
-          <div>
-{ingredientsObject}
+         {/* LAYER 1 ==================================================== */}
+        <div className={"bg-yellow-100"}>
+          <div className={'max-w-screen-xl mx-auto h-96 px-10'}>
+            <div className={"grid grid-cols-3 h-full"}>
+                <div>
+                  {/* Hero Image */}
+                </div>
+                <div className={"col-span-2 flex flex-col justify-end "}>
+                {/* Title */}
+                <h1
+                  className={
+                    'font-bold text-5xl text-blue-900 text-opacity-75 pt-20 pb-10'
+                  }
+                >
+                  {post.title}
+                </h1>
+                </div>
+              </div>
+            </div>
           </div>
-        <div className={"col-span-2 ..."}>{methodObject}</div>
+          {/* LAYER 2 ==================================================== */}
+          <div className={"bg-green-100"}>
+          <div className={'max-w-screen-xl mx-auto px-10 -top-5 relative'}>
+          <div className={"grid grid-cols-3 "}>
+          <div className={" "}>
+          <div className={" bg-gray-100 p-10 shadow-lg"}>
+              {ingredientsObject}
           </div>
-            
+          </div>
+        <div className={"col-span-2 bg-white p-10 shadow-xl"}>
+          {methodObject}
+          </div>
+          </div>
+          </div>
+          </div>
           {/* {stuff.map(v=>v)} */}
-          <hr />
-        </div>
+        
+
+       
         {/* <Bio /> */}
       </Layout>
     )
