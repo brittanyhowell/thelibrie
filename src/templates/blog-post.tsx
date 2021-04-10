@@ -31,7 +31,7 @@ const BlogPostTemplate = ({data, pageContext,location })=> {
          {/* LAYER 1 ==================================================== */}
         <div className={"bg-yellow-100"}>
           <div className={'max-w-screen-xl mx-auto h-96 px-10'}>
-            <div className={"grid grid-cols-3 h-full"}>
+            <div className={"grid grid-cols-3 h-full -top-16 relative"}>
                 <div>
                   {/* Hero Image */}
                 </div>
@@ -39,7 +39,7 @@ const BlogPostTemplate = ({data, pageContext,location })=> {
                 {/* Title */}
                 <h1
                   className={
-                    'font-bold text-5xl text-blue-900 text-opacity-75 pt-20 pb-10'
+                    'font-bold text-5xl text-blue-900 text-opacity-75 pt-20 pb-10 pl-16'
                   }
                 >
                   {post.title}
@@ -50,14 +50,14 @@ const BlogPostTemplate = ({data, pageContext,location })=> {
           </div>
           {/* LAYER 2 ==================================================== */}
           <div className={"bg-green-100"}>
-          <div className={'max-w-screen-xl mx-auto px-10 -top-5 relative'}>
+          <div className={'max-w-screen-xl mx-auto px-10 -top-16 relative'}>
           <div className={"grid grid-cols-3 "}>
           <div className={" "}>
           <div className={" bg-gray-100 p-10 shadow-lg"}>
               {ingredientsObject}
           </div>
           </div>
-        <div className={"col-span-2 bg-white p-10 shadow-xl"}>
+        <div className={"col-span-2 bg-white p-16 shadow-xl"}>
           {methodObject}
           </div>
           </div>
