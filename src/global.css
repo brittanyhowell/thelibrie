@@ -10,12 +10,14 @@ html{
 
 @layer base {
     h1 {
-      @apply text-2xl;
+      @apply font-black text-4xl md:text-7xl lg:text-9xl text-blue-900 text-opacity-75;
     }
     h2 {
-      @apply text-xl;
+      @apply font-black text-6xl text-blue-900 text-opacity-75;
     }
-
+    h3{
+        @apply text-2xl md:text-4xl italic text-gray-600 mb-10 ;
+    }
     p {
         @apply mb-5;
  

@@ -39,9 +39,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </div>
             <div className="col-span-2 flex flex-col justify-end ">
               {/* Title */}
-              <h1
-                className="font-black text-9xl text-blue-900 text-opacity-75 pt-20 pb-10 pl-16"
-              >
+              <h1>
                 {post.title}
               </h1>
             </div>

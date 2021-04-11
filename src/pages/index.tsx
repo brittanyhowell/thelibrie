@@ -22,18 +22,18 @@ export const BlogIndex: React.FC = ({ data, location }) => {
         <div className="max-w-screen-xl mx-auto py-10 px-10">
 
           <h1
-            className="font-black text-9xl text-blue-900 text-opacity-75 pt-20 pb-10W"
+            className=" pt-20 pb-10W"
           >
             CodeBrie.com
           </h1>
 
           <h2
-            className="font-black text-6xl text-blue-900 text-opacity-75 pt-20 pb-10W"
+            className=" pt-20 pb-10W"
           >
             Recipes
           </h2>
           <hr className="my-5 border-blue-900" />
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
 
             {recipes.map(({ node }) => {
               const title = node.title || node.slug;
@@ -65,12 +65,12 @@ export const BlogIndex: React.FC = ({ data, location }) => {
         <div className="bg-green-100">
           <div className="max-w-screen-xl mx-auto py-10 px-10">
             <h2
-              className="font-black text-6xl text-blue-900 text-opacity-75 pt-20 pb-10W"
+              className=" pt-20 pb-10W"
             >
               Posts
             </h2>
             <hr className="my-5 border-blue-900" />
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
               {posts.map(({ node }) => {
                 const title = node.title || node.slug;
                 return (
