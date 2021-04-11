@@ -1,17 +1,17 @@
-import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 function Bio() {
   return (
     <StaticQuery
       query={bioQuery}
       render={(data) => {
-        const { author, social } = data.site.siteMetadata
+        const { author, social } = data.site.siteMetadata;
         return (
           <div
             style={{
-              display: `flex`,
+              display: 'flex',
             }}
           >
             <GatsbyImage
@@ -20,12 +20,17 @@ function Bio() {
               style={{
                 marginBottom: 0,
                 minWidth: 50,
-                borderRadius: `100%`,
-              }} />
+                borderRadius: '100%',
+              }}
+            />
             <p>
-              Written by <strong>{author}</strong> who lives and works in
+              Written by
+              {' '}
+              <strong>{author}</strong>
+              {' '}
+              who lives and works in
               Minneapolis building silly things.
-              {` `}
+              {' '}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter
               </a>
@@ -52,6 +57,6 @@ const bioQuery = graphql`query BioQuery {
     }
   }
 }
-`
+`;
 
-export default Bio
+export default Bio;

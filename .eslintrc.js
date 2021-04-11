@@ -23,5 +23,6 @@ module.exports = {
 
     'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
     'import/prefer-default-export': 'off',
+    'linebreak-style': 0,
   },
 };

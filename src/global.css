@@ -6,3 +6,19 @@
 html{
     background: #FEF3C7;
 }
+
+
+@layer base {
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+
+    p {
+        @apply mb-5;
+ 
+        
+    }
+  }

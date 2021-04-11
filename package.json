@@ -78,6 +78,6 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "build": "gatsby build  --log-pages --verbose",
+    "build": "gatsby build  --log-pages --verbose"
    }
 }
