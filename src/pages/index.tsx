@@ -18,8 +18,8 @@ export const BlogIndex: React.FC = ({ data, location }) => {
         keywords={['blog', 'gatsby', 'javascript', 'react']}
       />
       {/* <Bio /> */}
-      <div className="bg-yellow-100">
-        <div className="max-w-screen-xl mx-auto py-10 px-10">
+      <div className="bg-blue-900">
+        <div className="max-w-screen-xl mx-auto py-10 px-10 bg-yellow-100">
 
           <h1
             className=" pt-20 pb-10W"
@@ -62,8 +62,8 @@ export const BlogIndex: React.FC = ({ data, location }) => {
             })}
           </div>
         </div>
-        <div className="bg-green-100">
-          <div className="max-w-screen-xl mx-auto py-10 px-10">
+        <div className="bg-blue-900">
+          <div className="max-w-screen-xl mx-auto py-10 px-10 bg-green-100">
             <h2
               className=" pt-20 pb-10W"
             >
