@@ -68,3 +68,4 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 static/NAAG_SVs_files/*
+static/*_files/*
