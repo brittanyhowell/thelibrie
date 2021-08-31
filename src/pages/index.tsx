@@ -3,45 +3,51 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
-export const BlogIndex: React.FC = ({ data, location }) => (
-  <Layout location={location} title="Code Brie">
-    <SEO
-      title="All posts"
-      keywords={['blog', 'gatsby', 'javascript', 'react']}
-    />
-    {/* <Bio /> */}
-    <div className="bg-blue-900">
-      <div className="max-w-screen-xl mx-auto py-10 px-10 bg-yellow-100">
+export const BlogIndex: React.FC = ({ data, location }) => {
+  const links = [{
+    title: 'NAAG_SVs',
+    URL: '/NAAG_SVs.html',
+  }, {
+    title: 'SNPsLD_distance',
+    URL: '/SNPsLD_distance.html',
+  },
 
-        <h1
-          className=" pt-20 pb-10W"
-        >
-          CodeBrie.com
-        </h1>
+  ];
+  return (
+    <Layout location={location} title="Code Brie">
+      <SEO
+        title="All posts"
+        keywords={['blog', 'gatsby', 'javascript', 'react']}
+      />
+      {/* <Bio /> */}
+      <div className="">
+        <div className="max-w-screen-xl mx-auto py-10 px-10 bg-yellow-100">
 
-        <h2
-          className=" pt-20 pb-10W"
-        >
-          Recipes
-        </h2>
-        <hr className="my-5 border-blue-900" />
-        <div className="grid  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6" />
-      </div>
-      <div className="bg-blue-900">
-        <div className="max-w-screen-xl mx-auto py-10 px-10 bg-green-100">
-          <h2
+          <h1
             className=" pt-20 pb-10W"
           >
-            Posts
+            CodeBrie.com
+          </h1>
+
+          <h2
+            className=" pt-20 pb-10W mb-5"
+          >
+            Thesis Plots
           </h2>
-          <hr className="my-5 border-blue-900" />
-          <div className="grid  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6" />
+          <ul className="border border-yellow-200 bg-yellow-300 rounded-xl p-5">
+            {links.map((v) => (
+              <li className="py-2 ml-5 list-disc">
+                <a className="font-mono text-xl text-blue-900  font-bold  " href={v.URL} target="_blank" rel="noreferrer">{v.title}</a>
+              </li>
+            ))}
+
+          </ul>
         </div>
       </div>
-    </div>
 
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default BlogIndex;
 
